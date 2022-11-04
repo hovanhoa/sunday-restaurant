@@ -1,0 +1,49 @@
+<div class="content-wrapper">
+    <div class="edit-food">
+        <h1>Update food</h1>
+        {{#each result}}
+        <form action="/admin/menu/update/{{this.id}}" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name of food</label>
+                <input type="text" class="form-control" value="{{this.name}}" id="name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Description</label>
+                <input type="text" class="form-control" value="{{this.description}}" id="description"
+                    name="description">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Price</label>
+                <input type="text" class="form-control" value="{{this.price}}" id="price" name="price">
+            </div>
+
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Change image</label>
+                <img class="food-img" src="/upload/{{this.image}}" alt="Ảnh minh họa" class="food-image-update">
+                <input class="form-control" type="file" id="sampleImage" name="sampleImage" accept="image/*"
+                    value="/upload/{{this.image}}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Confirm</button>
+        </form>
+        {{/each}}
+    </div>
+</div>
+
+<script src="/plugins/jquery/jquery.min.js"></script><!-- Bootstrap 4-->
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!-- DataTables  & Plugins-->
+<script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="/plugins/jszip/jszip.min.js"></script>
+<script src="/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.colVis.min.js"></script><!-- AdminLTE App-->
+<script src="/dist/js/adminlte.min.js"></script>
+<script src="/js/admin/index.js"></script><!-- AdminLTE for demo purposes-->
+<!-- Page specific script-->

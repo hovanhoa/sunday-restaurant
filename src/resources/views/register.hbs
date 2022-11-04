@@ -1,0 +1,38 @@
+{{>header}}
+<div class="banner">
+  <div class="login-center register">
+    <h2>Create new account</h2>
+    <form action="/register" method="POST">
+      <div class="txt_field">
+        <input type="text" name="lastName" required>
+        <span></span>
+        <label>Last name</label>
+      </div>
+      <div class="txt_field">
+        <input type="text" name="firstName" required>
+        <span></span>
+        <label>First name</label>
+      </div>
+      <div class="txt_field">
+        <input type="email" name="email" required>
+        <span></span>
+        <label>Email</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" name="password" required>
+        <span></span>
+        <label>Password</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" name="confirmPassword" required>
+        <span></span>
+        <label>Confirm password</label>
+      </div>
+      <button type="submit" class="log-in-button">Register</button>
+      <div class="signup_link">
+        Are you a member? <a href="/login">Login now</a>
+      </div>
+    </form>
+  </div>
+</div>
+{{>footer}}

@@ -1,0 +1,29 @@
+{{>header}}
+<div class="banner">
+  <div class="login-center">
+    <h2>Login</h2>
+    {{#if message}}
+    <div class="alert alert-danger" role="alert">
+      <h4 style="text-align: center;">{{message}}</h4>
+    </div>
+    {{/if}}
+    <form action="/login" method="POST">
+      <div class="txt_field">
+        <input type="email" name="userName" required>
+        <span></span>
+        <label>Your Email</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" name="password" required>
+        <span></span>
+        <label>Password</label>
+      </div>
+      <div class="pass">Forgot password?</div>
+      <button type="submit" class="log-in-button">Login</button>
+      <div class="signup_link">
+        Don't have an account? <a href="/register">Register now</a>
+      </div>
+    </form>
+  </div>
+</div>
+{{>footer}}

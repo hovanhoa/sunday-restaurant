@@ -1,0 +1,40 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect src/index.js",
+    "stop": "taskkill -f -im node.exe",
+    "scss": "sass src/resources/scss/app.scss:src/public/css/app.css src/resources/scss/admin/app.scss:src/public/css/admin/app.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-generator": "^4.16.1",
+    "express-handlebars": "^5.3.3",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.1",
+    "handlebars-helper-moment": "^0.2.0",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.12",
+    "password-hash": "^1.2.2",
+    "uuid": "^8.3.2"
+  },
+  "prettier": {
+    "bracketSameLine": true
+  },
+  "dependencies": {
+    "handlebars.moment": "^1.0.4",
+    "hbs-moment": "^0.0.1",
+    "moment": "^2.29.1",
+    "react": "^17.0.2"
+  }
+}

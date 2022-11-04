@@ -1,0 +1,105 @@
+<div class="content-wrapper">
+    <div class="store-food">
+        <div class="mt-4">
+            <h2>Menu List</h2>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add new food
+            </button>
+            <br><br>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add new food</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="add-form">
+                                <form action="/admin/menu/add" method="POST" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Name of food</label>
+                                        <input type="text" class="form-control" id="name" name="name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Description</label>
+                                        <input type="text" class="form-control" id="description" name="description">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Category</label>
+                                        <input type="text" class="form-control" id="category" name="category">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Price</label>
+                                        <input type="text" class="form-control" id="price" name="price">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label">Image upload</label>
+                                        <input class="form-control" type="file" id="sampleImage" name="sampleImage"
+                                            accept="image/*">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="food-table">
+                <table class='table table-hover custom-table' id="food-table">
+                    <thead>
+                        <tr>
+                            <th scope='col'>No.</th>
+                            <th scope='col'></th>
+                            <th scope='col'>Name of Food</th>
+                            <th scope='col'>Category</th>
+                            <th scope='col'>Description</th>
+                            <th scope='col'>Price</th>
+                            <th scope='col'>Action</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        {{#each result}}
+                        <tr>
+                            <td scope='row'>{{sum @index 1}}</td>
+                            <td><img src='/upload/{{this.image}}' alt='Ảnh minh họa' class='img-table' /></td>
+                            <td>{{this.name}}</td>
+                            <td>{{this.category}}</td>
+                            <td>{{this.description}}</td>
+                            <td>{{this.price}}</td>
+                            <td><a href="/admin/menu/edit/{{this.id}}" class="btn btn-light edit">Edit</a>
+                                <a href="/admin/menu/delete/{{this.id}}" class="btn btn-danger delete"
+                                    onclick="return confirm('Are you sure to delete this item?')">Delete</a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/plugins/jquery/jquery.min.js"></script><!-- Bootstrap 4-->
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!-- DataTables  & Plugins-->
+<script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="/plugins/jszip/jszip.min.js"></script>
+<script src="/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.colVis.min.js"></script><!-- AdminLTE App-->
+<script src="/dist/js/adminlte.min.js"></script>
+<script src="/js/admin/index.js"></script><!-- AdminLTE for demo purposes-->
+<!-- Page specific script-->

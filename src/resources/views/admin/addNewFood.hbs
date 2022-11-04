@@ -1,0 +1,29 @@
+<div class="add-new-food">
+  <h1>Add New Food</h1>
+  <div class="add-form">
+    <form action="/admin/menu/add" method="POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Tên món ăn</label>
+        <input type="text" class="form-control" id="name" name="name">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Mô tả món ăn</label>
+        <input type="text" class="form-control" id="description" name="description">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Loại món</label>
+        <input type="text" class="form-control" id="category" name="category">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Giá</label>
+        <input type="text" class="form-control" id="price" name="price">
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Thêm hình ảnh</label>
+        <input class="form-control" type="file" id="sampleImage" name="sampleImage" accept="image/*">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Thêm món ăn</button>
+    </form>
+  </div>
+</div>

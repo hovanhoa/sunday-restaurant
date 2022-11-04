@@ -1,0 +1,54 @@
+.food-table {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+
+.store-food {
+  padding-top: 40px;
+  width: 100%;
+  position: relative;
+}
+.store-food .mt-4 h2 {
+  text-align: center;
+}
+.store-food .mt-4 button {
+  position: relative;
+  text-align: center;
+  margin-left: 5%;
+}
+.store-food .mt-4 button a {
+  color: #fff;
+}
+.store-food .mt-4 .table tbody tr td, .store-food .mt-4 .table tbody tr th {
+  text-align: start;
+  vertical-align: middle;
+}
+.store-food .mt-4 .table tbody tr td .img-table, .store-food .mt-4 .table tbody tr th .img-table {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+.store-food .mt-4 .table tbody tr td:nth-child(1), .store-food .mt-4 .table tbody tr td:nth-child(3), .store-food .mt-4 .table tbody tr th:nth-child(1), .store-food .mt-4 .table tbody tr th:nth-child(3) {
+  font-weight: bold;
+}
+.store-food .mt-4 .custom-table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.edit-food {
+  padding: 30px;
+}
+.edit-food h1 {
+  text-align: center;
+}
+.edit-food .food-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=app.css.map */

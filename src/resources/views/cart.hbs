@@ -1,0 +1,71 @@
+{{>header}}
+<div class="cart-container">
+  <div class='cart-and-summary'>
+    <div class="cart-item-container">
+
+      {{#each cart.items}}
+      <div class='cart-item-info'   style="display: grid; grid-template-columns: 250px auto auto 20px;">
+        <div class="product-info">
+          <img src='/upload/{{this.image}}' alt='Image' />
+          <div class='cart-des-item'>
+            <h4>{{this.name}}</h4>
+            <h6>{{formatCurrency this.price}}</h6>
+          </div>
+        </div>
+
+
+        <div class='cart-quantity'>
+          <form action="/cart" method="POST">
+            <input type="hidden" name="itemQty" id="id" value="{{sum this.qty -1}}/{{this.id}}">
+            <button type='submit' class='change-qty-btn'><i class="fas fa-minus"></i></button>
+          </form>
+
+          <input type="text" readonly value="{{this.qty}}" class="quantity-area">
+
+          <form action="/cart" method="POST">
+            <input type="hidden" name="itemQty" id="id" value="{{sum this.qty 1}}/{{this.id}}">
+            <button type='submit' class='change-qty-btn'><i class="fas fa-plus"></i></button>
+          </form>
+        </div>
+      
+
+        <div class='total-price'>
+          <h4>Total</h4>
+          <h2>{{formatCurrency this.sumPrice}}</h2>
+        </div>
+
+        <div class='remove'>
+          <a href="cart/delete/{{this.id}}" onclick="return confirm('Are you sure to delete this item?')"><i class='fas fa-trash-alt'></i></a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{#if cart.items}}
+    <div class="summary">
+      <h2 class="receipt">Receipt Summary</h2>
+      <div class="payment-info">
+        <h4>Number of Items</h4>
+        <h3>{{cart.totalQuantity}}</h3>
+      </div>
+      <div class="payment-info">
+        <h4>Discount</h4>
+        <h3>25%</h3>
+      </div>
+      <div class="payment-info">
+        <h4>Tax</h4>
+        <h3>10%</h3>
+      </div>
+      <div class="total-payment">
+        <h2 class="total-title">Total</h2>
+        <h1 class="total-number">{{formatCurrency cart.totalPrice}}</h1>
+      </div>
+      <div class="process-to-checkout">
+        <a class="checkout-button" href="/checkout">Check Out</a>
+      </div>
+    </div>
+    {{else}}
+    <h1 style="color: #fff;">There are no item in your cart</h1>
+    {{/if}}
+  </div>
+</div>
+{{>footer}}

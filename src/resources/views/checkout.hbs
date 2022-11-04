@@ -1,0 +1,133 @@
+{{>header}}
+<div class="banner">
+    <!-- row -->
+    <div class="checkout-container">
+        <!-- Billing Details -->
+        <div class="billing-details">
+            <div class="section-title block-title">
+                <h3 class="title">Personal Details</h3>
+            </div>
+            <div class="form-group">
+                <input class="input" type="text" name="Name" id="name" placeholder="Họ và tên">
+            </div>
+            <div class="form-group">
+                <input class="input" type="text" name="Hamlet" id="Hamlet" placeholder="Số nhà/Tên đường - Thôn">
+            </div>
+            <div class="form-group">
+                <input class="input" type="text" name="Village" id="Village" placeholder="Xã - Phường - Thị trấn">
+            </div>
+            <div class="form-group">
+                <input class="input" type="text" name="District" id="District" placeholder="Quận - Huyện - Thành phố">
+            </div>
+            <div class="form-group">
+                <input class="input" type="text" name="Province" id="Province" placeholder="Tỉnh - Thành phố">
+            </div>
+            <div class="form-group">
+                <input class="input" type="tel" name="Telephone" id="Telephone" placeholder="Số điện thoại">
+            </div>
+        </div>
+
+        <!-- /Billing Details -->
+
+        <!-- Order Details -->
+        <div class="order-details">
+            <div class="section-title text-center block-title">
+                <h3 class="title">Your Orders</h3>
+            </div>
+            <div class="order-summary" >
+                <div class="order-col">
+                    <div style="width: 200px; "><strong>Item</strong></div>
+                    <div style="text-align:center;"><strong>Price</strong></div>
+                    <div style="text-align:right;"><strong>Quantity</strong></div>
+                </div>
+                {{#each cart.items}}
+                <div class="order-products" >
+                    <div class="order-col" >
+                        <div style="width: 200px; ">{{this.name}}</div>
+                        <div style="text-align:center;">{{formatCurrency this.price}}</div>
+                        <div style="text-align:right;">{{this.qty}}</div>
+                    </div>
+                    {{!-- <div class="order-col">
+                        <div>2x Hamburger</div>
+                        <div>100.000đ</div>
+                    </div> --}}
+                </div>
+                {{/each}}
+                {{#if cart.items}}
+                <div class="order-col">
+                    <div><strong>Total payment</strong></div>
+                    <div><strong class="order-total">{{formatCurrency cart.totalPrice}}</strong></div>
+                </div>
+                {{else}}
+                {{/if}}
+            </div>
+            <div class="payment-method">
+                <div class="input-radio">
+                    <input type="radio" name="payment" id="payment-1">
+                    <label for="payment-1">
+                        <span></span>
+                        Bank transfer
+                    </label>
+                    
+                </div>
+                <div class="input-radio">
+                    <input type="radio" name="payment" id="payment-2">
+                    <label for="payment-2">
+                        <span></span>
+                        Credit Card/Master Card
+                    </label>
+                    
+                </div>
+                <div class="input-radio">
+                    <input type="radio" name="payment" id="payment-3">
+                    <label for="payment-3">
+                        <span></span>
+                        Cash on delivery
+                    </label>
+                    <div class="caption">
+                        <p>We will confirm your payment later</p>
+                    </div>
+                </div>
+            </div>
+            <div class="input-checkbox">
+                <input type="checkbox" id="terms" onclick="add_to_form()">
+                <label for="terms">
+                    <span></span>
+                    I agree with <a href="#" style="color: blue;">Terms & Conditions</a>
+                </label>
+            </div>
+            
+            <form action="/checkout/payment" method="POST">
+                <input type="hidden" id = "payment_name" name="payment_name" value="HVH">
+                <input type="hidden" id = "payment_address" name="payment_address" value="123 ABC">
+                <input type="hidden" id = "payment_phone" name="payment_phone" value="113">
+                <button type='submit' class="order-submit" style="border:0px;"> PAY </button>
+            </form>
+        </div>
+        <!-- /Order Details -->
+    </div>
+    <!-- /row -->
+
+</div>
+<script>
+function add_to_form() {
+    var checkBox = document.getElementById("terms");
+    if (checkBox.checked == true){
+        var name = document.getElementById("name").value;
+        var Hamlet = document.getElementById("Hamlet").value;
+        var Village = document.getElementById("Village").value;
+        var District = document.getElementById("District").value;
+        var Province = document.getElementById("Province").value;
+        var Telephone = document.getElementById("Telephone").value;
+
+        var address = Hamlet + ", " + Village + ", " + District +", "+ Province ;
+        
+        document.getElementById("payment_name").value = name;
+        document.getElementById("payment_address").value = address;
+        document.getElementById("payment_phone").value = Telephone;
+    }
+
+
+}
+</script>
+{{>footer}}

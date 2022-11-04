@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+  box-sizing:  border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  justify-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 60rem;
+  }
+}
+
+@import 'variables';
+@import 'product';
+@import 'cartPage';
+@import 'slick';
+@import 'menu';
+@import 'banner';
+@import 'login';
+@import 'footer';
+@import 'account';
+@import 'checkout';

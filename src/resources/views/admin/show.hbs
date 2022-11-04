@@ -1,0 +1,18 @@
+<h1 style="text-align: center;">MY MENU</h1>
+<div class="mt-4">
+  <div class="row">
+    {{#each result}}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card" style="width: 18rem;">
+            <img src="/upload/{{this.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{this.name}}</h5>
+                <p class="card-text">{{this.description}}</p>
+                <h4>Giá: {{this.price}}</h4>
+                <a href="#" class="btn btn-primary">Thêm vào giỏ</a>
+            </div>
+            </div>
+        </div>
+    {{/each}}
+  </div>
+</div>

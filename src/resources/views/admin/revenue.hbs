@@ -1,0 +1,132 @@
+<div class="content-wrapper">
+  <!-- Content Header (Page header)-->
+  <section class="content-header">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Revenue Statistics</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Admin</a></li>
+              <li class="breadcrumb-item active">Revenue Statistics</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col"></div>
+              <div class="col" style="margin-bottom: 5px;">
+                <div class="row">
+                  {{!-- <div class="col-sm-4"><button type="submit" class="btn btn-secondary btn-block"
+                      style="margin:5px; width: 150px;">Thời gian</button></div>
+                  <div class="col-sm-4"><button type="submit" class="btn btn-secondary btn-block"
+                      style="margin:5px; width: 150px;">Khách hàng</button></div>
+                  <div class="col-sm-4"><button type="submit" class="btn btn-secondary btn-block"
+                      style="margin:5px; width: 150px;">Sản Phẩm</button></div> --}}
+
+
+
+                </div>
+              </div>
+              <div class="col"></div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+
+                <div class="row">
+                  <div class="col-12">
+                    <table class="table table-bordered table-striped" id="tab-faculty">
+                      <thead>
+                        <tr>
+                          <th class="text-center">Tên khách hàng</th>
+                          <th class="text-center">Số điện thoại</th>
+                          <th class="text-center">Loại thanh toán</th>
+                          <th class="text-center">Doanh thu</th>
+                          <th class="text-center">Lợi Nhuận</th>
+                          <th class="text-center">Lợi nhuận (%)</th>
+                          <th class="text-center">Chỉnh sửa</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {{#each result}}
+                        <tr>
+                          <td class="text-center">{{this.name}}</td>
+                          <td class="text-center">{{this.phone_number}}</td>
+                          <td class="text-center">{{this.type}}</td>
+                          <td class="text-center">{{this.total}}</td>
+                          <td class="text-center">{{this.total}}</td>
+                          <td class="text-center">100 %</td>
+                          <td class="text-center">
+                            <btn class="btn-deleteRevenue btn btn-danger btn-xs" data-id={{this.payment_id}}>
+                              <i class="fas fa-trash"></i>
+                            </btn>
+                          </td>
+                        </tr>
+                        {{/each}}
+
+
+
+                      </tbody>
+                    </table>
+
+                    <div class="modal fade" id="deleteRevenueModal" tabindex="-1" role="dialog"
+                      aria-labelledby="deleteRevenueModal" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content bg-danger">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Xóa</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                          </div>
+                          <form action="/admin/deleteRevenue" method="post">
+                            <div class="modal-body">
+                              <input type="hidden" name="id" />
+                              <p>Bạn có chắc chắn muốn xóa hóa đơn này
+                                không?
+                              </p>
+                            </div>
+                            <div class="modal-footer"><button class="btn btn-outline-light" type="button"
+                                data-dismiss="modal">Đóng
+                                lại</button><button class="btn btn-outline-light" type="submit">Xác nhận</button></div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.container-fluid-->
+  </section>
+  <!-- /.content-->
+</div>
+<!-- ./wrapper-->
+<!-- jQuery-->
+<script src="/plugins/jquery/jquery.min.js"></script><!-- Bootstrap 4-->
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script><!-- DataTables  & Plugins-->
+<script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="/plugins/jszip/jszip.min.js"></script>
+<script src="/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="/plugins/datatables-buttons/js/buttons.colVis.min.js"></script><!-- AdminLTE App-->
+<script src="/dist/js/adminlte.min.js"></script>
+<script src="/js/admin/index.js"></script><!-- AdminLTE for demo purposes-->
+<!-- Page specific script-->

@@ -1,0 +1,192 @@
+<div id="menu" class="menu-main pad-top-100 pad-bottom-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+          <h2 class="block-title text-center">
+            Our Menu
+          </h2>
+          <p class="title-caption text-center">There are many variations of passages of Lorem Ipsum available,
+            but the
+            majority have suffered alteration in some form, by injected humour, or randomised words which
+            don't look
+            even slightly believable. </p>
+        </div>
+        <div class="tab-menu">
+
+          {{!-- Show detail of product here --}}
+
+          <div id="food-detail-modal">
+            <button type="button" class="btn btn-light close-modal" onclick="closeModal()">X</button>
+            <div class="detail-item-container">
+              <!-- card left -->
+              <div class="detail-item-img">
+                <img src="" alt="">
+              </div>
+              <!-- card right -->
+              <div class="detail-item-content">
+                <h2 class="block-title text-center"></h2>
+
+                <div class="detail-item-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span>4.7(21)</span>
+                </div>
+
+
+
+                <div class="detail-item-description">
+                  <h4></h4>
+                  <ul>
+                    <li><i class="fas fa-check-circle"></i><span></span></li>
+                    <li><i class="fas fa-check-circle"></i><span></span></li>
+                    {{!-- <li><i class="fas fa-check-circle"></i>Available: <span>in stock</span></li>
+                    <li><i class="fas fa-check-circle"></i>Category: <span>Shoes</span></li> --}}
+                  </ul>
+                </div>
+                <div class="detail-item-price">
+                  <span></span>
+                </div>
+
+                <div class="detail-item-purchase">
+                  <div class="detail-item-quantity">
+                    <h3>Quantity: </h3><input type="number" min="0" value="1">
+                    <div class="btn btn-primary btn-primary-cart">
+                      <a href="/add-to-cart" >Add to Cart <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{!-- End show modal product --}}
+          <div class="slider slider-nav">
+            <div class="tab-title-menu">
+              <h2>STARTERS</h2>
+              <p> <i class="flaticon-canape"></i> </p>
+            </div>
+            <div class="tab-title-menu">
+              <h2>MAIN DISHES</h2>
+              <p> <i class="flaticon-dinner"></i> </p>
+            </div>
+            <div class="tab-title-menu">
+              <h2>DESERTS</h2>
+              <p> <i class="flaticon-desert"></i> </p>
+            </div>
+            <div class="tab-title-menu">
+              <h2>DRINKS</h2>
+              <p> <i class="flaticon-coffee"></i> </p>
+            </div>
+          </div>
+          <div class="slider slider-single">
+            <div class="grid-menu">
+              {{!-- START A PRODUCT --}}
+              {{#each result}}
+              {{#if (equal this.category "starters")}}
+              <div class="card-container">
+                <div class="offer-item" data-id="{{this.id}}">
+                  <img src="/upload/{{this.image}}" alt="" class="img-responsive">
+                  <div>
+                    <h3>{{this.name}}</h3>
+                    <p>
+                      {{this.description}}
+                    </p>
+                  </div>
+                </div>
+                <div class="price-and-cart">
+                  <h4 class="offer-price">{{formatCurrency this.price}}</h4>
+                  <form action="/add-to-cart" class="add-to-cart-form">
+                    <input type="hidden" name="id" id="id" value="{{this.id}}">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                  </form>
+                </div>
+              </div>
+              {{/if}}
+              {{/each}}
+              <!-- END A PRODUCT -->
+            </div>
+            <div class="grid-menu">
+              {{#each result}}
+              {{#if (equal this.category "main dishes")}}
+              <div class="card-container">
+                <div class="offer-item" data-id="{{this.id}}">
+                  <img src="/upload/{{this.image}}" alt="" class="img-responsive">
+                  <div>
+                    <h3>{{this.name}}</h3>
+                    <p>
+                      {{this.description}}
+                    </p>
+                  </div>
+                </div>
+                <div class="price-and-cart">
+                  <h4 class="offer-price">{{formatCurrency this.price}}</h4>
+                  <form action="/add-to-cart" class="add-to-cart-form">
+                    <input type="hidden" name="id" id="id" value="{{this.id}}">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                  </form>
+                </div>
+              </div>
+              {{/if}}
+              {{/each}}
+            </div>
+            <div class="grid-menu">
+              {{#each result}}
+              {{#if (equal this.category "deserts")}}
+              <div class="card-container">
+                <div class="offer-item" data-id="{{this.id}}">
+                  <img src="/upload/{{this.image}}" alt="" class="img-responsive">
+                  <div>
+                    <h3>{{this.name}}</h3>
+                    <p>
+                      {{this.description}}
+                    </p>
+                  </div>
+                </div>
+                <div class="price-and-cart">
+                  <h4 class="offer-price">{{formatCurrency this.price}}</h4>
+                  <form action="/add-to-cart" class="add-to-cart-form">
+                    <input type="hidden" name="id" id="id" value="{{this.id}}">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                  </form>
+                </div>
+              </div>
+              {{/if}}
+              {{/each}}
+            </div>
+            <div class="grid-menu">
+              {{#each result}}
+              {{#if (equal this.category "drinks")}}
+              <div class="card-container">
+                <div class="offer-item" data-id="{{this.id}}">
+                  <img src="/upload/{{this.image}}" alt="" class="img-responsive">
+                  <div>
+                    <h3>{{this.name}}</h3>
+                    <p>
+                      {{this.description}}
+                    </p>
+                  </div>
+                </div>
+                <div class="price-and-cart">
+                  <h4 class="offer-price">{{formatCurrency this.price}}</h4>
+                  <form action="/add-to-cart" class="add-to-cart-form">
+                    <input type="hidden" name="id" id="id" value="{{this.id}}">
+                    <button type="submit" class="add-to-cart">Add to Cart</button>
+                  </form>
+                </div>
+              </div>
+              {{/if}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+        <!-- end tab-menu -->
+      </div>
+      <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>

@@ -1,0 +1,7 @@
+{
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "database": "sunday_restaurant",
+    "port": 3306
+}

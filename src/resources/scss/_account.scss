@@ -1,0 +1,77 @@
+@import "variables";
+//-------------------
+// Acount Area      |
+//-------------------
+.account-container {
+  position: relative;
+  display: block;
+  width: fit-content;
+  float: right;
+  .avatar {
+    width: 50px;
+    height: 50px;
+    margin: auto 5px;
+  }
+  // Name of user
+  span {
+    margin: auto 5px;
+    color: $dark-blue;
+    font-size: 20px;
+  }
+  .account-btn {
+    cursor: pointer;
+    display: flex;
+    border: none;
+    outline: none;
+    background: none;
+    margin: 3px;
+    padding: 3px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  .account-btn:hover {
+    background: #ecf0f3;
+    border-radius: 8px;
+  }
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: max-content;
+  padding: 8px;
+  height: max-content;
+  list-style: none;
+  font-size: 18px;
+  border-radius: 8px;
+  li {
+    float: none;
+    display: block;
+  }
+  a {
+    text-decoration: none;
+    color: $black !important;
+    padding: 0 !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .loggout a {
+    color: red !important;
+  }
+  .my-account {
+    a {
+      color: $dark-blue;
+    }
+  }
+  .loggout,
+  .my-account {
+    padding: 10px;
+  }
+  .loggout:hover,
+  .my-account:hover {
+    border-radius: 8px;
+  }
+}
+.show {
+  display: block;
+}

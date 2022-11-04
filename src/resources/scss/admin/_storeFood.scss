@@ -1,0 +1,46 @@
+.food-table {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+.store-food {
+    padding-top: 40px;
+    width: 100%;
+    position: relative;
+  .mt-4 {
+      h2 {
+          text-align: center;
+      }
+      button {
+           position: relative;
+           text-align: center;
+           margin-left: 5%;
+           a {
+               color: #fff;
+           }
+      }
+    .table {
+      tbody {
+        tr {
+          td, th {
+            text-align: start;
+            vertical-align: middle;
+            .img-table {
+              object-fit: cover;
+              width: 100px;
+              height: 100px;
+              border-radius: 10px;
+            }
+            &:nth-child(1), &:nth-child(3) {
+                font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+    .custom-table {
+        width: 90%;
+        margin: 0 auto;
+    }
+  }
+}
